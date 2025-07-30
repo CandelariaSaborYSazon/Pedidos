@@ -43,10 +43,10 @@ if (pedidosCerrados) {
 // FIN ANUNCIO INICIAL DE PEDIDOS
   
   const precios = {
-    cerdo: 15000,
-    pollo: 15000,
-    mixto: 15000,
-    domicilio: 5000,
+    cerdo: 16000,
+    pollo: 16000,
+    mixto: 16000,
+    domicilio: 4000,
   };
 
   let cantidades = {
