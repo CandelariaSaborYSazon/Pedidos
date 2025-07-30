@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Candelaria - Sabor y Sazón</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+
+  <!-- Anuncio inicial -->
+ <div id="anuncioOverlay" class="overlay">
+   <div class="anuncio">
+     <div id="mensajeAnuncio" class="mensaje"></div>
+    <button id="btnContinuar" class="btnContinuar">Continuar</button>
+  </div>
+ </div>
+
+ <div id="contenidoPagina" style="display: none;">
+
+ <!-- Barra de resumen -->
+<div class="barraResumen" id="resumenPasteles">
+  <div class="itemResumen">🐷<br><strong id="resCerdo">0</strong></div>
+  <div class="itemResumen">🐔<br><strong id="resPollo">0</strong></div>
+  <div class="itemResumen">🐷🐔<br><strong id="resMixto">0</strong></div>
+  <div class="itemResumen">Pasteles<br><strong id="resTotalPasteles">0</strong></div>
+  <div class="itemResumen">Total<br><strong id="resTotalPrecio">$0</strong></div>
+
+  <!-- Botón para enviar el pedido -->
+  <button id="btnEnviarPedido" class="btnEnviarWhatsapp" disabled>
+    Enviar pedido por Whatsapp
+  </button>
+</div>
+
+
+  <div class="banner">
+    <img src="logo1.webp" alt="Logo" class="logo" />
+    <p class="mensaje">¡Disfruta del caribe Colombiano desde la hoja de bijao, esto es Candelaria sabores que cuentan historias!</p>
+ </div>
+
+
+  <div class="contenedor">
+    
+    <div class="productos">
+      <div class="producto">
+        <img src="cerdo.webp" alt="Pastel de cerdo" />
+        <h2>🐷 Pastel de Cerdo</h2>
+        <p class="desc-producto">
+          Pastel tradicional de arroz relleno con carne de cerdo sazonada, envuelto en hoja de bijao para un sabor inigualable.</p>
+        <p>$15.000</p>
+        <div class="contador">
+          <button onclick="decrementar('cerdo')">-</button>
+            <span id="cantidadCerdo">0</span>
+          <button onclick="incrementar('cerdo')">+</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img src="pollo.webp" alt="Pastel de pollo" />
+        <h2>🐔 Pastel de Pollo</h2>
+        <p class="desc-producto">
+          Pastel de arroz relleno con jugoso pollo marinado y especias, envuelto en hoja de bijao, receta típica del Magdalena.  
+        <p>$15.000</p>
+       <div class="contador">
+         <button onclick="decrementar('pollo')">-</button>
+           <span id="cantidadPollo">0</span>
+         <button onclick="incrementar('pollo')">+</button>
+       </div>
+     </div>
+
+     <div class="producto">
+       <img src="mixto.webp" alt="Pastel mixto" />
+       <h2>🐷🐔 Pastel Mixto</h2>
+       <p class="desc-producto">
+          Delicioso pastel de arroz con relleno mixto de pollo y cerdo, ideal para los que quieren probar lo mejor de ambos mundos.
+       <p>$15.000</p>
+       <div class="contador">
+         <button onclick="decrementar('mixto')">-</button>
+           <span id="cantidadMixto">0</span>
+         <button onclick="incrementar('mixto')">+</button>
+       </div>
+     </div>
+   </div>
+ </div>    
+
+  <div id="formulario" class="seccionFormulario">
+    <form id="formularioPedido">
+      <h2>Información de entrega</h2>
+      <input type="text" name="nombre" placeholder="Tu nombre" required />
+      <input type="text" name="direccion" placeholder="Dirección" required />
+      <input type="number" name="telefono" placeholder="Teléfono" required />
+      <select name="metodoPago" id="metodoPago" required>
+        <option value="">Método de pago</option>
+        <option value="efectivo">Efectivo contraentrega 💵</option>
+        <option value="transferencia">Transferencia a Nequi 📲</option>
+      </select>
+      <h2>🚛 Domicilio: $5.000</h2>
+      <div id="qrField" style="display:none">
+        <p>Número Nequi: 3132607427</p>
+        <p>Envia el comprobante de pago via Whatsapp</p>
+        <img src="nequi-qr.webp" alt="QR" width="300" />
+      </div>
+
+      <p id="mensajeError" class="mensaje-error"></p>
+      
+    </form>
+  </div>
+
+  <div id="mensajeGracias" style="display:none">
+    <h2>¡Gracias por tu pedido!</h2>
+    <button id="volverInicio">Hacer otro pedido</button>
+  </div>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
